@@ -78,3 +78,13 @@ Já na *segunda* matriz de correlação (após a realização do tratamento util
 Nessa etapa, foi separada as bases de treino e teste, juntamente com o balanceamento da classe Credit Score, utilizando a função SMOTE, uma vez que a variável estava muito desbalanceada para a classe com alto Score de crédito (69% dos total). <br>
 [![Gráfico](https://img.shields.io/badge/Proporção-blue?style=flat&logo=bar-chart&logoColor=pink)](https://github.com/MillenaThalyne/credit-score-project/blob/main/visualiza%C3%A7%C3%B5es/proporcao%20classe.png) [![Gráfico](https://img.shields.io/badge/Distribuição-blue?style=flat&logo=bar-chart&logoColor=pink)](https://github.com/MillenaThalyne/credit-score-project/blob/main/visualiza%C3%A7%C3%B5es/distribuicao%20classe.png) <br>
 Após o tratamento, a variável de Credit Score contou com 81 registros por classe.
+
+## Treinamento do Modelo de Regressão Logística 👾
+Foi aplicado o GridSearchCV para otimização do modelo que busca, automaticamente, a melhor combinação de hiperparâmetros. A utilização dessa técnica, juntamente com o RFE, que é um método de seleção de *features* que identifica quais variáveis mais contribuem para o desempenho do modelo, foi obtido um *Score* de 92%. <br>
+Como somente isso não é suficiente para avaliar o modelo de maneira mais aprofundada, foi realizado de algumas métricas de avaliação, obtendo os seguintes resultados: 
+- Acurácia: 0.9200
+- ROC-AUC: 0.9419
+- [![Gráfico](https://img.shields.io/badge/Matriz_Confusão-blue?style=flat&logo=bar-chart&logoColor=pink)](https://github.com/MillenaThalyne/credit-score-project/blob/main/visualiza%C3%A7%C3%B5es/matriz%20confusao.png)
+
+## Conclusão 📝
+O modelo apresentou um desempenho bastante satisfatório. A acurácia geral de 92% indica que a grande maioria das previsões foi correta, enquanto o ROC-AUC de 0.94 reforça a capacidade do modelo em distinguir bem as classes. As métricas por classe mostram resultados consistentes: a classe 1, majoritária, atingiu 94% de precisão e recall; a classe 0 manteve bom equilíbrio (82% em todas as métricas); e a classe 2 obteve desempenho perfeito, com 100% de acerto. A matriz de confusão confirma que os erros foram poucos e concentrados apenas entre as classes 0 e 1, sem impacto significativo na performance geral. Esses resultados mostram que o modelo é robusto e generaliza bem para os dados.
